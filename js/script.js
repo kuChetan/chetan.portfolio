@@ -1,7 +1,8 @@
+/* particles background */
+
 particlesJS("particles-js", {
 
 particles:{
-
 number:{value:80},
 
 color:{value:"#38bdf8"},
@@ -22,13 +23,11 @@ width:1
 
 move:{
 enable:true,
-speed:3
+speed:2
 }
-
 },
 
 interactivity:{
-
 events:{
 onhover:{enable:true,mode:"repulse"},
 onclick:{enable:true,mode:"push"}
@@ -38,12 +37,13 @@ modes:{
 repulse:{distance:120},
 push:{particles_nb:4}
 }
-
 },
 
 retina_detect:true
 
 });
+
+/* typing animation */
 
 const text="Senior Technical Consultant | DevOps Engineer";
 
