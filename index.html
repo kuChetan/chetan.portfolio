@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Chetan Sahu | DevOps Engineer</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
@@ -19,6 +18,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
@@ -27,11 +27,57 @@ background:#0f172a;
 color:#e2e8f0;
 }
 
+/* PARTICLE BACKGROUND */
+
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
+background:#0f172a;
+}
+
+/* LAYOUT */
+
 .container{
-max-width:1100px;
+max-width:1200px;
 margin:auto;
 padding:20px;
+width:90%;
 }
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 0;
+}
+
+nav h2{
+color:#38bdf8;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:20px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:#e2e8f0;
+font-weight:500;
+}
+
+nav ul li a:hover{
+color:#38bdf8;
+}
+
+/* HERO */
 
 header{
 text-align:center;
@@ -44,39 +90,40 @@ color:#38bdf8;
 margin-bottom:10px;
 }
 
-header p{
-font-size:18px;
-opacity:0.8;
-}
-
-.hero-btn{
-margin-top:25px;
+.typing{
+font-size:20px;
+margin-bottom:20px;
 }
 
 .hero-btn a{
 background:#38bdf8;
 color:#0f172a;
-padding:12px 25px;
+padding:12px 28px;
 border-radius:25px;
-font-weight:600;
 text-decoration:none;
+font-weight:600;
 }
 
+/* SECTION */
+
 section{
-margin-top:70px;
+margin-top:80px;
 }
 
 h2{
-margin-bottom:25px;
 color:#38bdf8;
+margin-bottom:25px;
 font-size:28px;
 }
+
+/* SKILLS */
 
 .skills{
 display:flex;
 flex-wrap:wrap;
-gap:20px;
-font-size:40px;
+gap:25px;
+justify-content:center;
+font-size:45px;
 }
 
 .skills i{
@@ -84,9 +131,11 @@ transition:0.3s;
 }
 
 .skills i:hover{
-transform:scale(1.3);
+transform:scale(1.2);
 color:#38bdf8;
 }
+
+/* PROJECT GRID */
 
 .grid{
 display:grid;
@@ -102,7 +151,7 @@ transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-10px);
 background:#334155;
 }
 
@@ -110,9 +159,13 @@ background:#334155;
 margin-bottom:10px;
 }
 
+/* CONTACT */
+
 .contact p{
 margin:10px 0;
 }
+
+/* FOOTER */
 
 footer{
 margin-top:80px;
@@ -122,18 +175,71 @@ border-top:1px solid #334155;
 opacity:0.7;
 }
 
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+header h1{
+font-size:36px;
+}
+
+nav ul{
+gap:10px;
+}
+
+}
+
+@media(max-width:600px){
+
+nav{
+flex-direction:column;
+gap:10px;
+}
+
+header h1{
+font-size:28px;
+}
+
+.skills{
+font-size:35px;
+}
+
+}
+
 </style>
 
 </head>
 
 <body>
 
+<div id="particles-js"></div>
+
 <div class="container">
 
+<!-- NAVBAR -->
+
+<nav>
+
+<h2>Chetan</h2>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
 <header>
+
 <h1>Chetan Sahu</h1>
-<p>Senior Technical Consultant | DevOps Engineer</p>
-<p>CKA Certified • Azure Administrator</p>
+
+<div class="typing">
+<span id="typing"></span>
+</div>
 
 <div class="hero-btn">
 <a href="#">Download Resume</a>
@@ -141,21 +247,26 @@ opacity:0.7;
 
 </header>
 
-<section>
+<!-- ABOUT -->
+
+<section id="about">
 
 <h2>About Me</h2>
 
 <p>
-DevOps Engineer with strong experience in CI/CD automation,
-infrastructure management and DevOps tools including Jenkins,
-GitHub, Terraform, Kubernetes, SonarQube and Artifactory.
-Currently working on automation initiatives and infrastructure
-management for enterprise environments.
+Senior Technical Consultant and DevOps Engineer experienced in CI/CD pipelines,
+automation frameworks, and infrastructure management using Jenkins, GitHub,
+Terraform, Kubernetes, SonarQube, and Artifactory.
+
+Certified Kubernetes Administrator (CKA) and Microsoft Azure Administrator.
+
 </p>
 
 </section>
 
-<section>
+<!-- SKILLS -->
+
+<section id="skills">
 
 <h2>DevOps Tech Stack</h2>
 
@@ -167,7 +278,9 @@ management for enterprise environments.
 
 </section>
 
-<section>
+<!-- PROJECTS -->
+
+<section id="projects">
 
 <h2>Projects</h2>
 
@@ -175,39 +288,29 @@ management for enterprise environments.
 
 <div class="card">
 <h3>Jenkins Agent Connectivity Automation</h3>
-<p>
-Automation script to validate Jenkins agent connectivity
-across nodes and export results to CSV reports.
-</p>
+<p>Automation script to validate Jenkins agent connectivity and export results to CSV.</p>
 </div>
 
 <div class="card">
 <h3>GitHub Branch Protection Automation</h3>
-<p>
-Automated GitHub script to enforce branch protection policies
-for repositories with naming patterns.
-</p>
+<p>Script to automatically enforce branch protection policies.</p>
 </div>
 
 <div class="card">
 <h3>SonarQube Inactive Project Detection</h3>
-<p>
-Script using SonarQube API to identify projects inactive
-for more than 90 days.
-</p>
+<p>Script using SonarQube API to identify inactive projects.</p>
 </div>
 
 <div class="card">
 <h3>Apache DevLake Integration</h3>
-<p>
-Installed and integrated Apache DevLake with Jenkins
-and GitHub for engineering metrics dashboards.
-</p>
+<p>Integrated DevLake with Jenkins and GitHub for engineering metrics.</p>
 </div>
 
 </div>
 
 </section>
+
+<!-- GITHUB STATS -->
 
 <section>
 
@@ -217,16 +320,19 @@ and GitHub for engineering metrics dashboards.
 
 </section>
 
-<section class="contact">
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
 
 <h2>Contact</h2>
 
 <p>Email: chetankusahu@outlook.com</p>
+
 <p>Phone: +91 9658969959</p>
 
 <p>GitHub: https://github.com/YOUR_USERNAME</p>
 
-<p>LinkedIn: Add your LinkedIn here</p>
+<p>LinkedIn: Add your LinkedIn profile</p>
 
 </section>
 
@@ -237,6 +343,98 @@ and GitHub for engineering metrics dashboards.
 </footer>
 
 </div>
+
+<!-- PARTICLES SCRIPT -->
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+
+particlesJS("particles-js", {
+
+particles: {
+
+number:{value:80},
+
+color:{value:"#38bdf8"},
+
+shape:{type:"circle"},
+
+opacity:{value:0.5},
+
+size:{value:3},
+
+line_linked:{
+
+enable:true,
+
+distance:150,
+
+color:"#38bdf8",
+
+opacity:0.4,
+
+width:1
+
+},
+
+move:{
+
+enable:true,
+
+speed:3
+
+}
+
+},
+
+interactivity:{
+
+events:{
+
+onhover:{enable:true,mode:"repulse"},
+
+onclick:{enable:true,mode:"push"}
+
+},
+
+modes:{
+
+repulse:{distance:120},
+
+push:{particles_nb:4}
+
+}
+
+},
+
+retina_detect:true
+
+});
+
+/* typing animation */
+
+const text="Senior Technical Consultant | DevOps Engineer";
+
+let i=0;
+
+function typing(){
+
+if(i<text.length){
+
+document.getElementById("typing").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typing,50);
+
+}
+
+}
+
+typing();
+
+</script>
 
 </body>
 
